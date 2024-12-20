@@ -1,0 +1,30 @@
+mat-sidenav {
+    width: 200px;
+}
+
+
+.content {
+    padding: 10px;
+}
+
+mat-toolbar {
+    position: relative;
+    z-index: 5;
+}
+
+mat-sidenav-container {
+    height: 100%;
+    border-bottom: black;
+
+}
+mat-sidenav {
+    padding: 10px;
+    text-align: center;
+    z-index: 4;
+    background-color: whitesmoke;
+    border-color: gray;
+}
+
+.side-nav-item:hover {
+    background-color: blue;
+}

@@ -1,0 +1,27 @@
+<ng-container *ngIf="verseList != undefined">
+    <table  mat-table [dataSource]="verseList">
+
+        <ng-container matColumnDef="verse">
+            <th mat-header-cell *matHeaderCellDef>Verse</th>
+            <td mat-cell *matCellDef="let element">{{element.book}} {{element.chapter}}:{{element.verseNumber}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="text">
+            <th mat-header-cell *matHeaderCellDef>Text</th>
+            <td mat-cell *matCellDef="let element">{{element.text}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="deleteVerse(element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</ng-container>
+

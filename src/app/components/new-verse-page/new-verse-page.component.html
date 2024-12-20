@@ -1,0 +1,24 @@
+<div class="new-verse-page-body">
+    
+    <h3>Find random Bible verse</h3>
+
+    <button mat-raised-button (click)="getVerse()">
+        New Verse
+    </button>
+
+    <ng-container *ngIf="verse != undefined && !verseSaved">
+
+    <button  mat-raised-button  (click)="saveVerse()">
+        Save
+    </button>
+
+        <H4 class="verse-header">{{verse.book}} {{verse.chapter}}:{{verse.verseNumber}}</H4>
+        <p>{{verse.text}}</p>
+    </ng-container>
+
+    <div class="saved-banner" *ngIf="verseSaved">
+        <h4>Your verse has been saved</h4>
+    </div>
+</div>
+
+

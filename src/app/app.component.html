@@ -1,0 +1,28 @@
+<mat-toolbar class="mat-elevation-z3" >
+  <button mat-icon-button color="primary" (click)="goHome()">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="sideNavChange()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container >
+
+  <mat-sidenav mode="side" opened="{{sideNavStatus}}">
+    <button mat-raised-button  (click)="goHome()">Get New Bible Verse</button>
+    <mat-nav-list>
+      <mat-list-item  routerLink="/all" routerLinkActive="active"> All Saved Verses</mat-list-item>
+      <ng-container #listOfBooks *ngFor="let item of sideNavData.savedBooks">
+        <mat-list-item  routerLink="/{{item.book}}" routerLinkActive="active"> {{item.book}}</mat-list-item>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet />
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
